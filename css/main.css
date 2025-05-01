@@ -1,42 +1,46 @@
-/* COMMON */
+/* COMMON: 전체 문서에 공통 적용되는 스타일 */
 body {
-  color: #333;                        /* 전체 텍스트 색상 */
-  font-size: 16px;                    /* 기본 폰트 크기 */
-  font-weight: 400;                   /* 기본 폰트 굵기 */
-  line-height: 1.4;                   /* 줄 간격 */
-  font-family: "Nanum Gothic", sans-serif; /* 전체 폰트 */
+  color: #333;                                /* 기본 글자 색상 */
+  font-size: 16px;                            /* 본문 폰트 크기 */
+  font-weight: 400;                           /* 폰트 굵기 보통 */
+  line-height: 1.4;                           /* 줄 간 간격 */
+  font-family: "Nanum Gothic", sans-serif;   /* 전체 폰트 설정 */
 }
 img {
-  display: block;                     /* 이미지를 블록 요소로 지정 (하단 공백 제거 효과) */
+  display: block;                             /* 이미지 하단 공백 제거 */
 }
 a {
-  text-decoration: none;              /* 링크 밑줄 제거 */
+  text-decoration: none;                      /* 링크 밑줄 제거 */
 }
 .inner {
-  width: 1100px;
-  margin: 0 auto;
-  position: relative;
+  width: 1100px;                              /* 고정된 폭 */
+  margin: 0 auto;                             /* 가운데 정렬 */
+  position: relative;                         /* 내부 요소 위치 기준 */
 }
 
+
+/* Header 영역 설정 */
 header {
   width: 100%;
-  position: fixed;
+  position: fixed;                            /* 항상 상단 고정 */
   top: 0;
-  z-index: 9;
-  background-color: #F6F5F0;
-  border-bottom: 1px solid #c8c8c8;
+  z-index: 9;                                 /* 다른 요소 위에 표시 */
+  background-color: #F6F5F0;                  /* 연한 베이지 배경 */
+  border-bottom: 1px solid #c8c8c8;           /* 헤더 하단 구분선 */
 }
 header > .inner {
-  height: 120px;
+  height: 120px;                              /* 헤더 높이 고정 */
 }
 header .logo {
-  height: 75px;
+  height: 75px;                               /* 로고 이미지 높이 */
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  margin: auto;
+  margin: auto;                               /* 수직 가운데 정렬 */
 }
+
+/* 서브 메뉴 (상단 로그인 등) */
 header .sub-menu {
   position: absolute;
   top: 10px;
@@ -44,40 +48,42 @@ header .sub-menu {
   display: flex;
 }
 header .sub-menu ul.menu {
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;            /* 서브 메뉴 폰트 */
   display: flex;
 }
 header .sub-menu ul.menu li {
-  position: relative;
+  position: relative;                        /* ::before 선 위치 기준 */
 }
 header .sub-menu ul.menu li::before {
   content: "";
   width: 1px;
   height: 12px;
-  background-color: #e5e5e5;
+  background-color: #e5e5e5;                 /* 구분선 */
   position: absolute;
   top: 0;
   bottom: 0;
   margin: auto;
 }
 header .sub-menu ul.menu li:first-child::before {
-  display: none;
+  display: none;                             /* 첫 메뉴 앞엔 선 없음 */
 }
 header .sub-menu ul.menu li a {
-  padding: 11px 16px;
+  padding: 11px 16px;                        /* 메뉴 간격 */
   display: block;
   font-size: 13px;
   color: #656565;
 }
 header .sub-menu ul.menu li a:hover {
-  color: #000;
+  color: #000;                               /* hover 시 진한 색 */
 }
+
+/* 검색창 스타일 */
 header .sub-menu .search {
   position: relative;
   height: 34px;
 }
 header .sub-menu .search input {
-  width: 36px;
+  width: 36px;                               /* 기본 너비 (접힘) */
   height: inherit;
   padding: 4px 10px;
   border: 1px solid #ccc;
@@ -87,11 +93,11 @@ header .sub-menu .search input {
   background-color: #fff;
   color: #777;
   font-size: 12px;
-  transition: width .4s;
+  transition: width .4s;                     /* 자연스러운 확장 효과 */
 }
 header .sub-menu .search input:focus {
-  width: 190px;
-  border-color: #669900;
+  width: 190px;                              /* 입력 시 확장 */
+  border-color: #669900;                     /* 스타벅스 그린 */
 }
 header .sub-menu .search .material-icons {
   height: 24px;
@@ -103,8 +109,11 @@ header .sub-menu .search .material-icons {
   transition: .4s;
 }
 header .sub-menu .search.focused .material-icons {
-  opacity: 0;
+  opacity: 0;                                /* 포커스되면 아이콘 숨김 */
 }
+
+
+/* 메인 메뉴 (COFFEE, MENU, STORE 등) */
 header .main-menu {
   position: absolute;
   bottom: 0;
@@ -118,28 +127,32 @@ header .main-menu .item .item__name {
   font-size: 13px;
 }
 header .main-menu .item:hover .item__name {
-  background-color: #2C2A29;
-  color: #669900;
-  border-radius: 6px 6px 0 0;
+  background-color: #2C2A29;                 /* hover 시 어두운 배경 */
+  color: #669900;                             /* 스타벅스 그린 */
+  border-radius: 6px 6px 0 0;                /* 상단만 둥글게 */
 }
+
+/* 메뉴 드롭다운 콘텐츠 */
 header .main-menu .item .item__contents {
   width: 100%;
-  position: fixed;
+  position: fixed;                           /* 화면 기준 위치 고정 */
   left: 0;
   display: none;
 }
 header .main-menu .item:hover .item__contents {
   display: block;
 }
+
+/* 메뉴 내용 (빨간 영역) */
 header .main-menu .item .item__contents .contents__menu {
   background-color: #2C2A29;
 }
 header .main-menu .item .item__contents .contents__menu > ul {
   padding: 20px 0;
-  display: flex;
+  display: flex;                             /* 가로 정렬 */
 }
 header .main-menu .item .item__contents .contents__menu > ul > li {
-  width: 220px;
+  width: 220px;                              /* 각 열의 폭 */
 }
 header .main-menu .item .item__contents .contents__menu > ul > li h4 {
   padding: 3px 0 12px 0;
@@ -155,16 +168,19 @@ header .main-menu .item .item__contents .contents__menu > ul > li ul li {
 header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
   color: #669900;
 }
+
+
+/* 메뉴 하단 텍스처 (주황 영역) */
 header .main-menu .item .item__contents .contents__texture {
   padding: 26px 0;
   font-size: 12px;
-  background-image: url("../images/main_menu_pattern.jpg");
+  background-image: url("../images/main_menu_pattern.jpg");  /* 배경 이미지 */
 }
 header .main-menu .item .item__contents .contents__texture h4 {
   color: #999;
   font-weight: 900;
 }
 header .main-menu .item .item__contents .contents__texture p {
-  color: #64a70b;
+  color: #64a70b;                             /* 초록 포인트 색상 */
   margin: 4px 0 14px;
 }
