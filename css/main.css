@@ -1,103 +1,104 @@
-/* COMMON: 전체 문서에 공통 적용되는 스타일 */
+/* ========== 공통 스타일 (전체 페이지에 적용되는 기본 설정) ========== */
 body {
-  color: #333;                                /* 기본 글자 색상 */
-  font-size: 16px;                            /* 본문 폰트 크기 */
-  font-weight: 400;                           /* 폰트 굵기 보통 */
-  line-height: 1.4;                           /* 줄 간 간격 */
-  font-family: "Nanum Gothic", sans-serif;   /* 전체 폰트 설정 */
+  color: #333;                        /* 텍스트 기본 색상: 짙은 회색 */
+  font-size: 16px;                    /* 본문 텍스트 기본 크기 */
+  font-weight: 400;                   /* 보통 두께 */
+  line-height: 1.4;                   /* 줄 간격: 가독성 확보 */
+  font-family: "Nanum Gothic", sans-serif; /* 기본 폰트 지정 */
 }
 img {
-  display: block;                             /* 이미지 하단 공백 제거 */
+  display: block;                     /* 이미지 하단 공백 제거 (inline 성격 제거) */
 }
 a {
-  text-decoration: none;                      /* 링크 밑줄 제거 */
+  text-decoration: none;              /* 링크에 밑줄 제거 */
 }
 .inner {
-  width: 1100px;                              /* 고정된 폭 */
-  margin: 0 auto;                             /* 가운데 정렬 */
-  position: relative;                         /* 내부 요소 위치 기준 */
+  width: 1100px;                      /* 중앙 고정 폭 */
+  margin: 0 auto;                     /* 가운데 정렬 */
+  position: relative;                /* 자식 요소의 absolute 위치 기준점 */
 }
 
-
-/* Header 영역 설정 */
+/* ========== 헤더 영역 ========== */
 header {
-  width: 100%;
-  position: fixed;                            /* 항상 상단 고정 */
-  top: 0;
-  z-index: 9;                                 /* 다른 요소 위에 표시 */
-  background-color: #F6F5F0;                  /* 연한 베이지 배경 */
-  border-bottom: 1px solid #c8c8c8;           /* 헤더 하단 구분선 */
+  width: 100%;                        /* 가로 전체 영역 */
+  position: fixed;                   /* 항상 화면 상단에 고정됨 */
+  top: 0;                             /* 상단에서 0px 거리 */
+  z-index: 9;                         /* 다른 요소들보다 위에 배치 */
+  background-color: #F6F5F0;         /* 밝은 베이지 배경색 */
+  border-bottom: 1px solid #c8c8c8;  /* 하단 테두리로 구분선 */
 }
 header > .inner {
-  height: 120px;                              /* 헤더 높이 고정 */
+  height: 120px;                      /* 헤더의 세로 높이 고정 */
 }
+
+/* 로고 위치 설정 */
 header .logo {
-  height: 75px;                               /* 로고 이미지 높이 */
+  height: 75px;                       /* 로고 이미지 높이 */
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  margin: auto;                               /* 수직 가운데 정렬 */
+  margin: auto;                      /* 수직 중앙 정렬 */
 }
 
-/* 서브 메뉴 (상단 로그인 등) */
+/* 서브 메뉴 (로그인, 고객센터 등) */
 header .sub-menu {
-  position: absolute;
-  top: 10px;
-  right: 0;
-  display: flex;
+  position: absolute;                /* 헤더 내부에서의 위치 조정 */
+  top: 10px;                         /* 헤더 상단에서 약간 아래 */
+  right: 0;                          /* 오른쪽 정렬 */
+  display: flex;                     /* 메뉴 항목을 가로 정렬 */
 }
 header .sub-menu ul.menu {
-  font-family: Arial, sans-serif;            /* 서브 메뉴 폰트 */
-  display: flex;
+  font-family: Arial, sans-serif;   /* 메뉴 텍스트 전용 폰트 */
+  display: flex;                    /* 가로 나열 */
 }
 header .sub-menu ul.menu li {
-  position: relative;                        /* ::before 선 위치 기준 */
+  position: relative;               /* ::before로 선을 넣기 위한 기준 */
 }
 header .sub-menu ul.menu li::before {
-  content: "";
+  content: "";                      /* 가상의 구분선 삽입 */
   width: 1px;
   height: 12px;
-  background-color: #e5e5e5;                 /* 구분선 */
+  background-color: #e5e5e5;        /* 연한 회색 선 */
   position: absolute;
   top: 0;
   bottom: 0;
-  margin: auto;
+  margin: auto;                     /* 수직 가운데 정렬 */
 }
 header .sub-menu ul.menu li:first-child::before {
-  display: none;                             /* 첫 메뉴 앞엔 선 없음 */
+  display: none;                    /* 첫 번째 메뉴 앞에는 선 제거 */
 }
 header .sub-menu ul.menu li a {
-  padding: 11px 16px;                        /* 메뉴 간격 */
-  display: block;
+  padding: 11px 16px;               /* 내부 여백 */
+  display: block;                   /* 전체 클릭 가능 영역으로 확장 */
   font-size: 13px;
-  color: #656565;
+  color: #656565;                   /* 기본 회색 텍스트 */
 }
 header .sub-menu ul.menu li a:hover {
-  color: #000;                               /* hover 시 진한 색 */
+  color: #000;                      /* 마우스를 올렸을 때 검정색 강조 */
 }
 
-/* 검색창 스타일 */
+/* 검색창 설정 */
 header .sub-menu .search {
   position: relative;
   height: 34px;
 }
 header .sub-menu .search input {
-  width: 36px;                               /* 기본 너비 (접힘) */
-  height: inherit;
-  padding: 4px 10px;
+  width: 36px;                      /* 기본 너비 (비활성화 상태) */
+  height: inherit;                  /* 상위 height 상속 */
+  padding: 4px 10px;                /* 안쪽 여백 */
   border: 1px solid #ccc;
-  box-sizing: border-box;
-  border-radius: 5px;
-  outline: none;
+  box-sizing: border-box;          /* 패딩 포함 너비 계산 */
+  border-radius: 5px;              /* 둥근 테두리 */
+  outline: none;                   /* 포커스 시 파란 테두리 제거 */
   background-color: #fff;
-  color: #777;
+  color: #777;                      /* 회색 글씨 */
   font-size: 12px;
-  transition: width .4s;                     /* 자연스러운 확장 효과 */
+  transition: width .4s;           /* 포커스 시 너비 자연스럽게 확장 */
 }
 header .sub-menu .search input:focus {
-  width: 190px;                              /* 입력 시 확장 */
-  border-color: #669900;                     /* 스타벅스 그린 */
+  width: 190px;                     /* 포커스 시 너비 확장됨 */
+  border-color: #669900;           /* 테두리 색 → 스타벅스 그린 */
 }
 header .sub-menu .search .material-icons {
   height: 24px;
@@ -106,81 +107,83 @@ header .sub-menu .search .material-icons {
   bottom: 0;
   right: 5px;
   margin: auto;
-  transition: .4s;
+  transition: .4s;                  /* 아이콘 등장/사라짐 애니메이션 */
 }
 header .sub-menu .search.focused .material-icons {
-  opacity: 0;                                /* 포커스되면 아이콘 숨김 */
+  opacity: 0;                       /* 입력 중일 땐 아이콘 숨김 */
 }
 
-
-/* 메인 메뉴 (COFFEE, MENU, STORE 등) */
+/* ========== 메인 메뉴 영역 (COFFEE, MENU 등 상단 메뉴) ========== */
 header .main-menu {
-  position: absolute;
+  position: absolute;              /* 헤더 하단에 고정 */
   bottom: 0;
   right: 0;
-  z-index: 1;
-  display: flex;
+  z-index: 1;                      /* 헤더 내부 위계 구조용 */
+  display: flex;                   /* 메뉴 가로 나열 */
 }
+
+/* 메인 메뉴 항목 기본 스타일 */
 header .main-menu .item .item__name {
-  padding: 10px 20px 34px 20px;
+  padding: 10px 20px 34px 20px;    /* 위, 좌우, 아래 여백 */
   font-family: Arial, sans-serif;
   font-size: 13px;
 }
 header .main-menu .item:hover .item__name {
-  background-color: #2C2A29;                 /* hover 시 어두운 배경 */
-  color: #669900;                             /* 스타벅스 그린 */
-  border-radius: 6px 6px 0 0;                /* 상단만 둥글게 */
+  background-color: #2C2A29;       /* 마우스 올릴 때 배경 어둡게 */
+  color: #669900;                  /* 스타벅스 그린 텍스트 */
+  border-radius: 6px 6px 0 0;      /* 상단만 둥글게 처리 */
 }
 
-/* 메뉴 드롭다운 콘텐츠 */
+/* ========== 드롭다운 메뉴 콘텐츠 영역 ========== */
 header .main-menu .item .item__contents {
-  width: 100%;
-  position: fixed;                           /* 화면 기준 위치 고정 */
+  width: 100%;                     /* 전체 가로폭 사용 */
+  position: fixed;                 /* (💡주의) 화면 기준 위치. 이게 문제 원인 가능성 있음 */
   left: 0;
-  display: none;
+  display: none;                   /* 기본은 안 보이게 */
 }
 header .main-menu .item:hover .item__contents {
-  display: block;
+  display: block;                  /* hover 시 메뉴 열림 */
 }
 
-/* 메뉴 내용 (빨간 영역) */
+/* 드롭다운 메뉴의 상단 콘텐츠 (보통 배경색 있는 메뉴 목록 영역) */
 header .main-menu .item .item__contents .contents__menu {
-  background-color: #2C2A29;
+  background-color: #2C2A29;       /* 어두운 배경 (스타벅스 스타일) */
 }
 header .main-menu .item .item__contents .contents__menu > ul {
-  padding: 20px 0;
-  display: flex;                             /* 가로 정렬 */
+  padding: 20px 0;                 /* 위아래 여백 */
+  display: flex;                   /* 좌우로 나란히 배치 (2열 구조) */
 }
+
+/* 드롭다운 개별 메뉴 섹션 (예: 커피, 음료 등) */
 header .main-menu .item .item__contents .contents__menu > ul > li {
-  width: 220px;                              /* 각 열의 폭 */
+  width: 220px;                    /* 각 열의 폭 */
 }
 header .main-menu .item .item__contents .contents__menu > ul > li h4 {
-  padding: 3px 0 12px 0;
+  padding: 3px 0 12px 0;           /* 제목 상하 여백 */
   font-size: 14px;
-  color: #fff;
+  color: #fff;                     /* 흰색 제목 글자 */
 }
 header .main-menu .item .item__contents .contents__menu > ul > li ul li {
-  padding: 5px 0;
+  padding: 5px 0;                  /* 메뉴 간격 */
   font-size: 12px;
-  color: #999;
-  cursor: pointer;
+  color: #999;                     /* 회색 서브 메뉴 텍스트 */
+  cursor: pointer;                 /* 마우스 커서 포인터로 변경 */
 }
 header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
-  color: #669900;
+  color: #669900;                  /* hover 시 녹색 강조 */
 }
 
-
-/* 메뉴 하단 텍스처 (주황 영역) */
+/* ========== 드롭다운 하단 텍스처 영역 (설명 영역) ========== */
 header .main-menu .item .item__contents .contents__texture {
-  padding: 26px 0;
+  padding: 26px 0;                 /* 상하 여백 */
   font-size: 12px;
-  background-image: url("../images/main_menu_pattern.jpg");  /* 배경 이미지 */
+  background-image: url("../images/main_menu_pattern.jpg"); /* 배경 이미지 */
 }
 header .main-menu .item .item__contents .contents__texture h4 {
-  color: #999;
-  font-weight: 900;
+  color: #999;                     /* 회색 소제목 */
+  font-weight: 900;                /* 굵게 강조 */
 }
 header .main-menu .item .item__contents .contents__texture p {
-  color: #64a70b;                             /* 초록 포인트 색상 */
-  margin: 4px 0 14px;
+  color: #64a70b;                  /* 라임빛 녹색 포인트 */
+  margin: 4px 0 14px;              /* 위아래 간격 */
 }
