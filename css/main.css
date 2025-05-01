@@ -5,6 +5,7 @@ body {
   font-weight: 400;                   /* 보통 두께 */
   line-height: 1.4;                   /* 줄 간격: 가독성 확보 */
   font-family: "Nanum Gothic", sans-serif; /* 기본 폰트 지정 */
+  height: 3000px;
 }
 img {
   display: block;                     /* 이미지 하단 공백 제거 (inline 성격 제거) */
@@ -20,12 +21,11 @@ a {
 
 /* ========== 헤더 영역 ========== */
 header {
-  width: 100%;                        /* 가로 전체 영역 */
-  position: fixed;                   /* 항상 화면 상단에 고정됨 */
-  top: 0;                             /* 상단에서 0px 거리 */
-  z-index: 9;                         /* 다른 요소들보다 위에 배치 */
+  width: 100%;
+  position: fixed;
   background-color: #F6F5F0;         /* 밝은 베이지 배경색 */
   border-bottom: 1px solid #c8c8c8;  /* 하단 테두리로 구분선 */
+  top: 0;
 }
 header > .inner {
   height: 120px;                      /* 헤더의 세로 높이 고정 */
@@ -187,3 +187,15 @@ header .main-menu .item .item__contents .contents__texture p {
   color: #64a70b;                  /* 라임빛 녹색 포인트 */
   margin: 4px 0 14px;              /* 위아래 간격 */
 }
+header .badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+header .badges .badge{
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,.15);
+  cursor: pointer;
+} 
