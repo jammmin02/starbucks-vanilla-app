@@ -57,3 +57,10 @@ fadeEls.forEach(function (fadeEl, index) {
     opacity: 1                   // 투명도 1로 설정 (보이게 하기)
   });
 });
+
+
+new Swiper('.notice-line .swiper-container', {
+  direction: 'vertical',
+  autoplay: true,
+  loop: true
+});
