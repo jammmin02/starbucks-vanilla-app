@@ -639,3 +639,52 @@ header .badges .badge {
 .pick-your-favorite .text-group .description{
   margin-bottom: 40px;
 }
+
+/* RESERVE STORE */
+.reserve-store {
+  background-image: url("../images/reserve_store_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.reserve-store .inner{
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reserve-store .medal {
+  width: 334px;
+  height: 334px;
+  perspective: 600px;
+}
+.reserve-store .medal .front,
+.reserve-store .medal .back {
+  position: absolute;
+  width: 334px;
+  height: 334px;
+  backface-visibility: hidden; /* 뒷면이 보이지 않게 설정 */
+  transition: 1s;
+}
+.reserve-store .medal .front {
+  transform: rotateY(0deg);
+}
+.reserve-store .medal:hover .front {
+  transform: rotateY(180deg); /* 처음에는 뒤집힌 상태 */
+}
+
+.reserve-store .medal .back {
+  transform: rotateY(-180deg); /* 뒷면도 반대 방향으로 뒤집혀 있음 */
+}
+
+.reserve-store .medal:hover .back {
+  transform: rotateY(0deg); /* 마우스를 올리면 앞면이 보이도록 회전 */
+}
+.reserve-store .medal .back .btn {
+  position: absolute;
+  top: 240px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
