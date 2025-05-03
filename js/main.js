@@ -64,12 +64,23 @@ new Swiper('.notice-line .swiper-container', {
   autoplay: true,
   loop: true
 });
+// Swiper 인스턴스 생성 (프로모션 영역용)
 new Swiper('.promotion .swiper-container', {
-  slidesPerView: 3, 
-  spaceBetween: 10,
-  centeredSlides: true,
-  loop: true,
+  slidesPerView: 3,              // 한 번에 보여줄 슬라이드 개수
+  spaceBetween: 10,              // 슬라이드 사이 여백 (px 단위)
+  centeredSlides: true,          // 1번 슬라이드를 가운데로 배치
+  loop: true,                    // 슬라이드 반복 재생 여부
   // autoplay: {
-  //   delay : 5000
-  // }
+  //   delay: 5000               // 자동 슬라이드 간 시간 간격 (ms 단위)
+  // },
+
+  pagination: {
+    el: '.promotion .swiper-pagination',  // 페이지 번호 요소 (수정됨: promation → promotion)
+    clickable: true                       // 페이지 번호 클릭으로 슬라이드 이동 가능
+  },
+
+  navigation: {
+    prevEl: '.promotion .swiper-prev',    // 이전 슬라이드 버튼 요소 (수정됨: promation → promotion)
+    nextEl: '.promotion .swiper-next'     // 다음 슬라이드 버튼 요소 (수정됨: promation → promotion)
+  }
 });
