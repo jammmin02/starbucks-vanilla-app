@@ -70,9 +70,9 @@ new Swiper('.promotion .swiper-container', {
   spaceBetween: 10,              // 슬라이드 사이 여백 (px 단위)
   centeredSlides: true,          // 1번 슬라이드를 가운데로 배치
   loop: true,                    // 슬라이드 반복 재생 여부
-  // autoplay: {
-  //   delay: 5000               // 자동 슬라이드 간 시간 간격 (ms 단위)
-  // },
+  autoplay: {
+    delay: 5000               // 자동 슬라이드 간 시간 간격 (ms 단위)
+  },
 
   pagination: {
     el: '.promotion .swiper-pagination',  // 페이지 번호 요소 (수정됨: promation → promotion)
@@ -82,5 +82,29 @@ new Swiper('.promotion .swiper-container', {
   navigation: {
     prevEl: '.promotion .swiper-prev',    // 이전 슬라이드 버튼 요소 (수정됨: promation → promotion)
     nextEl: '.promotion .swiper-next'     // 다음 슬라이드 버튼 요소 (수정됨: promation → promotion)
+  }
+});
+
+
+// 프로모션 영역 요소를 선택 
+const promotionEl = document.querySelector('.promotion');
+
+// 프로모션 토글 버튼 요소 선택 
+const promotionToggleBtn = document.querySelector('.toggle-promotion');
+
+// 프로모션 숨김 여부 상태를 저장할 변수 (초기값: false → 보임 상태)
+let isHidePromotion = false;
+
+// 토글 버튼 클릭 시 실행되는 이벤트 핸들러
+promotionToggleBtn.addEventListener('click', function () {
+  // 상태 값을 반전시킴 (true <-> false)
+  isHidePromotion = !isHidePromotion;
+
+  if (isHidePromotion) {
+    // 숨김 상태일 경우: 'hide' 클래스를 추가하여 숨김 처리
+    promotionEl.classList.add('hide');
+  } else {
+    // 보임 상태일 경우: 'hide' 클래스를 제거하여 다시 보여줌
+    promotionEl.classList.remove('hide');
   }
 });
