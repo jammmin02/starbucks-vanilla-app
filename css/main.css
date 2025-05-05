@@ -1,4 +1,4 @@
-/* ========== 공통 스타일 (전체 페이지에 적용되는 기본 설정) ========== */
+/* COMMON (공통 스타일)*/
 body {
   color: #333;                        /* 텍스트 기본 색상: 짙은 회색 */
   font-size: 16px;                    /* 본문 텍스트 기본 크기 */
@@ -68,6 +68,7 @@ a {
   color: #333;
   background-color: #FFF;
 }
+/* BACK TO POSITION */
 .back-to-position {
   opacity: 0;
   transition: 1s;
@@ -95,7 +96,7 @@ a {
   transition-delay: .9s;
 }
 
-/* ========== 헤더 영역 ========== */
+/* HEADER */
 header {
   width: 100%;
   position: fixed;
@@ -190,7 +191,7 @@ header .sub-menu .search.focused .material-icons {
   opacity: 0;                       /* 입력 중일 땐 아이콘 숨김 */
 }
 
-/* ========== 메인 메뉴 영역 (COFFEE, MENU 등 상단 메뉴) ========== */
+/*  메인 메뉴 영역 (COFFEE, MENU 등 상단 메뉴) */
 header .main-menu {
   position: absolute;              /* 헤더 하단에 고정 */
   bottom: 0;
@@ -211,7 +212,7 @@ header .main-menu .item:hover .item__name {
   border-radius: 6px 6px 0 0;      /* 상단만 둥글게 처리 */
 }
 
-/* ========== 드롭다운 메뉴 콘텐츠 영역 ========== */
+/* 드롭다운 메뉴 콘텐츠 영역 =*/
 header .main-menu .item .item__contents {
   width: 100%;                     /* 전체 가로폭 사용 */
   position: fixed;                 /* (💡주의) 화면 기준 위치. 이게 문제 원인 가능성 있음 */
@@ -250,7 +251,7 @@ header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
   color: #669900;                  /* hover 시 녹색 강조 */
 }
 
-/* ========== 드롭다운 하단 텍스처 영역 (설명 영역) ========== */
+/*드롭다운 하단 텍스처 영역 (설명 영역)*/
 header .main-menu .item .item__contents .contents__texture {
   padding: 26px 0;                 /* 상하 여백 */
   font-size: 12px;
@@ -394,8 +395,6 @@ header .badges .badge {
   justify-content: flex-end;
   align-items: center;
 }
-.notice .notice-line .inner__right h2 {}
-
 .notice .notice-line .inner__right .toggle-promotion {
   width: 62px;
   height: 62px;
@@ -494,9 +493,7 @@ header .badges .badge {
   color: #fff;
 }
 
-/* ========================= */
 /* REWARDS (리워드 영역) */
-/* ========================= */
 .rewards {
   position: relative;
 }
@@ -614,9 +611,6 @@ header .badges .badge {
 }
 .season-product .text-group .description{
   margin-bottom: 15px;
-}
-.season-product .text-group .more{
-
 }
 
 /* RESERVE COFFEE  */
@@ -874,7 +868,7 @@ footer .logo{
   margin: 30px auto 0;
 }
 
-
+/* TO TOP */
 #to-top {
   width: 42px;
   height: 42px;
