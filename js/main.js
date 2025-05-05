@@ -64,6 +64,7 @@ new Swiper('.notice-line .swiper-container', {
   autoplay: true,
   loop: true
 });
+
 // Swiper 인스턴스 생성 (프로모션 영역용)
 new Swiper('.promotion .swiper-container', {
   slidesPerView: 3,              // 한 번에 보여줄 슬라이드 개수
@@ -84,6 +85,18 @@ new Swiper('.promotion .swiper-container', {
     nextEl: '.promotion .swiper-next'     // 다음 슬라이드 버튼 요소 (수정됨: promation → promotion)
   }
 });
+new Swiper('.awards .swiper-container', {
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5,
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next'
+  }
+});
+
+
 
 
 // 프로모션 영역 요소를 선택 
@@ -142,3 +155,4 @@ spyEls.forEach(function(spyEl) {
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller());
 });
+
